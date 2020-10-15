@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using System.Runtime.Versioning;
 using UnityEngine;
 
 public class CameraCtr : MonoBehaviour
@@ -8,12 +10,16 @@ public class CameraCtr : MonoBehaviour
     public GameObject mainCamera;
     //サブカメラ
     public GameObject subCamera;
+    //画像
+   // public Image image;
+    public GameObject Image;
 
     private bool mainCameraIN = true;
 
     void Start()
     {
         subCamera.SetActive(false);
+        Image.SetActive(false);
     }
 
     //メインカメラ
@@ -21,7 +27,7 @@ public class CameraCtr : MonoBehaviour
     {
         mainCamera.SetActive(true);
         subCamera.SetActive(false);
-
+        Image.SetActive(false);
         mainCameraIN = true;
     }
 
@@ -30,7 +36,7 @@ public class CameraCtr : MonoBehaviour
     {
         mainCamera.SetActive(false);
         subCamera.SetActive(true);
-
+        Image.SetActive(true);
         mainCameraIN = false;
     }
 
