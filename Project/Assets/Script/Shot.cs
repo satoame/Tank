@@ -11,7 +11,7 @@ public class Shot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             // 砲弾のプレハブを実体化（インスタンス化）する。
             GameObject shot = Instantiate(ShotPrefab, transform.position, Quaternion.identity);

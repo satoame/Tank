@@ -13,6 +13,8 @@ public class CameraCtr : MonoBehaviour
     //画像
    // public Image image;
     public GameObject Image;
+    public GameObject Panel1;
+    public GameObject Panel2;
 
     private bool mainCameraIN = true;
 
@@ -20,6 +22,8 @@ public class CameraCtr : MonoBehaviour
     {
         subCamera.SetActive(false);
         Image.SetActive(false);
+        Panel1.SetActive(false);
+        Panel2.SetActive(false);
     }
 
     //メインカメラ
@@ -28,6 +32,8 @@ public class CameraCtr : MonoBehaviour
         mainCamera.SetActive(true);
         subCamera.SetActive(false);
         Image.SetActive(false);
+        Panel1.SetActive(false);
+        Panel2.SetActive(false);
         mainCameraIN = true;
     }
 
@@ -37,6 +43,8 @@ public class CameraCtr : MonoBehaviour
         mainCamera.SetActive(false);
         subCamera.SetActive(true);
         Image.SetActive(true);
+        Panel1.SetActive(true);
+        Panel2.SetActive(true);
         mainCameraIN = false;
     }
 
