@@ -9,10 +9,8 @@ public class ShotPosition : MonoBehaviour
 
     void Start()
     {
-        //生成
-        //GameObject shot = Instantiate(ShotPrefab, transform.position, Quaternion.identity);
-       // Rigidbody shotbr = shot.GetComponent<Rigidbody>();
     }
+
     void Update()
     {
         //ショット

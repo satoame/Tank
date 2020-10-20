@@ -9,7 +9,7 @@ public class Camera : MonoBehaviour
 
     void Start()
     {
-        targetObj = GameObject.Find("Tank Prefab");
+        targetObj = GameObject.Find("Player");
         targetPos = targetObj.transform.position;
     }
 
