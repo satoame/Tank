@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Look : MonoBehaviour
 {
-    private GameObject traget;
+    public GameObject traget;
     
 
     void Start()

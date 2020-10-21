@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretHIt : MonoBehaviour
+public class PlayerHit : MonoBehaviour
 {
-    public GameObject Turret;
-    public int TurretHP;
+    public GameObject Player;
+    public int PlayerHP;
 
     private int damege;
 
@@ -16,18 +16,21 @@ public class TurretHIt : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.tag == "Shot")
+        if (coll.gameObject.tag == "Eshot")
         {
-            //ダメージ
-            TurretHP = TurretHP - damege;
+
+            PlayerHP = PlayerHP - damege;
             //エフェクト追加
 
             Destroy(coll.gameObject);
 
-            if (TurretHP == 0)
+            if (PlayerHP == 0)
             {
-                Destroy(Turret);
+                Destroy(Player);
+                //ゲームオーバー画面
+
             }
         }
     }
+
 }
