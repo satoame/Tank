@@ -25,4 +25,5 @@ public class ShotPosition : MonoBehaviour
             shot.transform.forward = this.transform.forward;
         }
     }
+
 }
