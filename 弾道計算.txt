@@ -1,0 +1,14 @@
+Vector3 CalcPositionFromForce(float time, 		//時間(何秒後)
+			      float mass, 		//質量(Kg)
+			      Vector3 startPosition, 	//初期位置
+			      Vector3 force, 		//力(初速度)
+			      Vector3 gravity) 		//重力
+{
+    Vector3 speed = (force / mass) * Time.fixedDeltaTime;
+    Vector3 position = (speed * time) + (gravity * 0.5f * Mathf.Pow(time, 2));
+
+    return startPosition + position;
+}
+
+https://qiita.com/edo_m18/items/5e367eb6dc1417c25474
+ここ見たらもうちょい深くわかる
