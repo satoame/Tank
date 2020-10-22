@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHit : MonoBehaviour
 {
-    public GameObject Player;
+    //public GameObject Player;
     public int PlayerHP;
 
     private int damege;
@@ -26,9 +26,8 @@ public class PlayerHit : MonoBehaviour
 
             if (PlayerHP == 0)
             {
-                Destroy(Player);
+              //  Destroy(this.gameObject);
                 //ゲームオーバー画面
-
             }
         }
     }
