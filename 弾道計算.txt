@@ -1,4 +1,4 @@
-Vector3 CalcPositionFromForce(float time, 		//時間(何秒後)
+Vector3 CalcPositionFromForce(float time, 		//時間(総秒数の分割数)
 			      float mass, 		//質量(Kg)
 			      Vector3 startPosition, 	//初期位置
 			      Vector3 force, 		//力(初速度)
