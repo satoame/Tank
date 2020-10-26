@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     public float moveSpeed;
     public float turnSpeed;
+    public GameObject ShotPrefab;
+    public GameObject ShotPosition;
 
     private Rigidbody rb;
 
@@ -20,6 +21,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject shot = Instantiate(ShotPrefab, ShotPosition.transform.position, ShotPosition.transform.rotation);
+        }
+
         Move();
         Turn();
     }

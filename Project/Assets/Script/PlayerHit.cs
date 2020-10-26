@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHit : MonoBehaviour
-{
-    //public GameObject Player;
+{ 
     public int PlayerHP;
 
     private int damege;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemyattack : MonoBehaviour
 {
-    Animation anim;
+    private Animation anim;
   
     void Start()
     {
