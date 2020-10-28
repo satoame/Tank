@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerHit : MonoBehaviour
 { 
-    public int PlayerHP;
-
-    private int damege;
+    public int hp;
+    public int hpMax;
+    public int damage;
 
     void Start()
     {
-        damege = 10;
     }
 
     void OnCollisionEnter(Collision coll)
@@ -18,12 +17,12 @@ public class PlayerHit : MonoBehaviour
         if (coll.gameObject.tag == "Eshot")
         {
 
-            PlayerHP = PlayerHP - damege;
+            hp = hp - damage;
             //エフェクト追加
 
             Destroy(coll.gameObject);
 
-            if (PlayerHP == 0)
+            if (hp == 0)
             {
               //  Destroy(this.gameObject);
                 //ゲームオーバー画面

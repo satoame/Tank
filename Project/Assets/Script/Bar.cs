@@ -6,14 +6,13 @@ using UnityEngine.UI;
 
 public class Bar : MonoBehaviour
 {
-    private PlayerHit playerHit;
+    public Slider slider;
     //最大
     int maxHp = 100;
     //今
     int Hp;
+    private PlayerHit playerHit;
     private int reward = 10;
-
-    public Slider slider;
 
     void Start()
     {
@@ -27,7 +26,7 @@ public class Bar : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if ((collider.gameObject.tag == "Enemy") || (collider.gameObject.tag == "EnemyS") || (collider.gameObject.tag == "Eshot"))
+        if ((collider.gameObject.tag == "Enemy") || (collider.gameObject.tag == "Eshot"))
         {
 
             Hp = Hp - playerHit.damage;
@@ -35,11 +34,13 @@ public class Bar : MonoBehaviour
             slider.value = (float)playerHit.hp / (float)playerHit.hpMax;
 
         }
-        if (collider.gameObject.tag == "HPItem")
+
+        //アイテム追加時
+       /* if (collider.gameObject.tag == "HPItem")
         {
             playerHit.AddHP(reward);
 
             slider.value = (float)playerHit.hp / (float)playerHit.hpMax;
-        }
+        }*/
     }
 }
