@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //ショット
         if (Input.GetMouseButtonDown(0))
         {
             GameObject shot = Instantiate(ShotPrefab, ShotPosition.transform.position, ShotPosition.transform.rotation);

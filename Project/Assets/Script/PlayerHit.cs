@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHit : MonoBehaviour
-{ 
-    private int hp;
-    public int hpMax;
-    public int damage;
+{
     public Slider slider;
+    public int hpMax;
+    private int hp;
+    private int damage;
 
     void Start()
     {
@@ -25,12 +25,13 @@ public class PlayerHit : MonoBehaviour
 
             hp = hp - damage;
             //エフェクト追加
-
+            //Instantiate(,transform.position,transform.rotation);
             Destroy(coll.gameObject);
+            //HPバー
             slider.value = (float)hp / (float)hpMax;
             if (hp == 0)
             {
-                //  Destroy(this.gameObject);
+                // Destroy(this.gameObject);
                 //ゲームオーバー画面
             }
         }

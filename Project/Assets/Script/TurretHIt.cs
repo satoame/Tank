@@ -5,8 +5,9 @@ using UnityEngine;
 public class TurretHIt : MonoBehaviour
 {
     public GameObject Turret;
+    public GameObject effect;
     public int TurretHP;
-
+    //public AudioCilp deathSE;
     private int damege;
 
     void Start()
@@ -20,9 +21,13 @@ public class TurretHIt : MonoBehaviour
         {
             //ダメージ
             TurretHP = TurretHP - damege;
-            //エフェクト追加
 
+            //エフェクト追加
+            //Instantiate(effect,transform.position,transform.rotation);
             Destroy(coll.gameObject);
+            //音
+            /*var audioSource = FindObjectOfType<AudioSource>();
+            audioSource.PlayOneShot(deathSE);*/
 
             if (TurretHP == 0)
             {
