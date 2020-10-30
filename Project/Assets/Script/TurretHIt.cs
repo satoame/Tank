@@ -25,7 +25,7 @@ public class TurretHIt : MonoBehaviour
             //エフェクト追加
             GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
             Destroy(coll.gameObject);
-            Destroy(effect, 2.0f);
+            //Destroy(effect, 2.0f);
             //音
             /*var audioSource = FindObjectOfType<AudioSource>();
             audioSource.PlayOneShot(deathSE);*/

@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class PlayerHit : MonoBehaviour
 {
     public Slider slider;
-    public int hpMax;
+    //public GameObject effectPrefab;
+    public GameObject MainCamera;
     private int hp;
+    private int hpMax;
     private int damage;
 
     void Start()
@@ -22,19 +24,23 @@ public class PlayerHit : MonoBehaviour
     {
         if (coll.gameObject.tag == "Eshot")
         {
-
             hp = hp - damage;
-            //エフェクト追加
-            //Instantiate(,transform.position,transform.rotation);
+         
             Destroy(coll.gameObject);
             //HPバー
             slider.value = (float)hp / (float)hpMax;
-            if (hp == 0)
+
+            if (slider.value == 0)
             {
-                // Destroy(this.gameObject);
+                
+                Destroy(gameObject);
+                //スクリプト無効
+                //gameObject.GetComponent<CameraCtr>().enabled = false;
+                Debug.Log("a");
+                //エフェクト追加
+                // GameObject effect = Instantiate(effectPrefab, transform.position, transform.rotation);
                 //ゲームオーバー画面
             }
         }
     }
-
 }

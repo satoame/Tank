@@ -6,7 +6,6 @@ public class Shot : MonoBehaviour
 {
     //public Player player;
     public float shotSpeed;
-    public AudioClip shotSound;
     //時間(総秒数の分割数)
     //public float time;
     //力(初速度)
@@ -33,7 +32,7 @@ public class Shot : MonoBehaviour
         //方向
         transform.forward = this.transform.forward;
         //音
-        AudioSource.PlayClipAtPoint(shotSound, transform.position);
+        //AudioSource.PlayClipAtPoint(shotSound, transform.position);
         //Vector3 force = this.transform.forward * shotSpeed;
         //Debug.Log("force" + force);
         //Destroy(shot, 4);

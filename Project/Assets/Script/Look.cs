@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Look : MonoBehaviour
 {
-    public GameObject traget;
-    
+    private GameObject traget;
 
     void Start()
     {
@@ -14,6 +13,6 @@ public class Look : MonoBehaviour
 
     void Update()
     {
-        this.gameObject.transform.LookAt(traget.transform.position);
+       this.gameObject.transform.LookAt(traget.transform.position);
     }
 }
