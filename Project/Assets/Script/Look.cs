@@ -5,14 +5,22 @@ using UnityEngine;
 public class Look : MonoBehaviour
 {
     private GameObject traget;
+    public bool targetflag;
 
     void Start()
     {
         traget = GameObject.Find("Player");
+        targetflag = true;
     }
 
     void Update()
     {
-       this.gameObject.transform.LookAt(traget.transform.position);
+        if (targetflag == true)
+        {
+            this.gameObject.transform.LookAt(traget.transform.position);
+        }else if(targetflag == false)
+        {
+            this.gameObject.transform.LookAt(null);
+        }
     }
 }

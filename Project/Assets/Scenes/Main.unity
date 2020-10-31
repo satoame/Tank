@@ -150,7 +150,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -597,6 +597,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7443991679908162934}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &987900382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7443991680423629473, guid: ad1a552548d8fb24fbe48ee063fee640,
+    type: 3}
+  m_PrefabInstance: {fileID: 7443991679908162934}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987900381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f173f093880253408b346f1b940ec71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &990378730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,9 +1399,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1012461869}
-  effectPrefab: {fileID: 8117251970529023667, guid: 5b0a7f4db87affc44b60e15f26befb6c,
-    type: 3}
-  Player: {fileID: 1754279112}
+  script: {fileID: 987900382}
+  cameraCtr: {fileID: 0}
 --- !u!259 &1754279119
 LightProbeProxyVolume:
   m_ObjectHideFlags: 0

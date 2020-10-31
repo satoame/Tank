@@ -11,7 +11,6 @@ public class CameraCtr : MonoBehaviour
     //サブカメラ
     public GameObject subCamera;
     //画像
-   // public Image image;
     public GameObject Image;
     public GameObject Panel1;
     public GameObject Panel2;

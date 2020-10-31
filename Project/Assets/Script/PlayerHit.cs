@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHit : MonoBehaviour
 {
     public Slider slider;
+    public Look script;
+    public CameraCtr cameraCtr;
     //public GameObject effectPrefab;
-    public GameObject MainCamera;
+    //public GameObject MainCamera;
     private int hp;
     private int hpMax;
     private int damage;
@@ -36,10 +39,12 @@ public class PlayerHit : MonoBehaviour
                 Destroy(gameObject);
                 //スクリプト無効
                 //gameObject.GetComponent<CameraCtr>().enabled = false;
+                script.targetflag = false;
                 Debug.Log("a");
                 //エフェクト追加
                 // GameObject effect = Instantiate(effectPrefab, transform.position, transform.rotation);
                 //ゲームオーバー画面
+                SceneManager.LoadScene("GameOver");
             }
         }
     }
