@@ -8,9 +8,9 @@ public class PlayerHit : MonoBehaviour
 {
     public Slider slider;
     public Look script;
-    public CameraCtr cameraCtr;
-    //public GameObject effectPrefab;
-    //public GameObject MainCamera;
+    //public CameraCtr cameraCtr;
+    public GameObject effectPrefab1;
+    public GameObject effectPrefab2;
     private int hp;
     private int hpMax;
     private int damage;
@@ -28,23 +28,25 @@ public class PlayerHit : MonoBehaviour
         if (coll.gameObject.tag == "Eshot")
         {
             hp = hp - damage;
-         
+            //エフェクト追加(ダメージ時)
+            GameObject effect1 = Instantiate(effectPrefab1, transform.position, transform.rotation);
             Destroy(coll.gameObject);
             //HPバー
             slider.value = (float)hp / (float)hpMax;
 
             if (slider.value == 0)
             {
-                
-                Destroy(gameObject);
-                //スクリプト無効
-                //gameObject.GetComponent<CameraCtr>().enabled = false;
+                //プレイヤー削除(削除にカメラ不明)
+                //Destroy(gameObject);
+
+                //Lookat無効
                 script.targetflag = false;
-                Debug.Log("a");
-                //エフェクト追加
-                // GameObject effect = Instantiate(effectPrefab, transform.position, transform.rotation);
+              
+                //エフェクト追加(破壊時)
+                 GameObject effect2 = Instantiate(effectPrefab2, transform.position, transform.rotation);
+                 Destroy(effect2, 2.0f);
                 //ゲームオーバー画面
-                SceneManager.LoadScene("GameOver");
+                //SceneManager.LoadScene("GameOver");
             }
         }
     }

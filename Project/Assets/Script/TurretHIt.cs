@@ -7,7 +7,6 @@ public class TurretHIt : MonoBehaviour
     public GameObject Turret;
     public GameObject effectPrefab;
     public int TurretHP;
-    //public AudioCilp deathSE;
     private int damege;
 
     void Start()
@@ -25,10 +24,7 @@ public class TurretHIt : MonoBehaviour
             //エフェクト追加
             GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
             Destroy(coll.gameObject);
-            //Destroy(effect, 2.0f);
-            //音
-            /*var audioSource = FindObjectOfType<AudioSource>();
-            audioSource.PlayOneShot(deathSE);*/
+            Destroy(effect, 2.0f);
 
             if (TurretHP == 0)
             {

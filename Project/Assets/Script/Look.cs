@@ -15,10 +15,12 @@ public class Look : MonoBehaviour
 
     void Update()
     {
+        //存在する時
         if (targetflag == true)
         {
             this.gameObject.transform.LookAt(traget.transform.position);
-        }else if(targetflag == false)
+        }
+        else if(targetflag == false)
         {
             this.gameObject.transform.LookAt(null);
         }
