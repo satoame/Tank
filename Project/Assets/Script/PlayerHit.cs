@@ -30,21 +30,26 @@ public class PlayerHit : MonoBehaviour
             hp = hp - damage;
             //エフェクト追加(ダメージ時)
             GameObject effect1 = Instantiate(effectPrefab1, transform.position, transform.rotation);
+            Destroy(effect1, 1.0f);
+
+            //敵のショット削除
             Destroy(coll.gameObject);
+
             //HPバー
             slider.value = (float)hp / (float)hpMax;
 
+            //バー0の時
             if (slider.value == 0)
             {
                 //プレイヤー削除(削除にカメラ不明)
-                //Destroy(gameObject);
+                //cameraCtrを消す
 
                 //Lookat無効
                 script.targetflag = false;
               
                 //エフェクト追加(破壊時)
                  GameObject effect2 = Instantiate(effectPrefab2, transform.position, transform.rotation);
-                 Destroy(effect2, 2.0f);
+                 Destroy(effect2, 1.0f);
                 //ゲームオーバー画面
                 //SceneManager.LoadScene("GameOver");
             }

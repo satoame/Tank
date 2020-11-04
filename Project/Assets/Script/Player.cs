@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //ショット
+        //ショット　間隔変更
         if (Input.GetMouseButtonDown(0))
         {
             GameObject shot = Instantiate(ShotPrefab, ShotPosition.transform.position, ShotPosition.transform.rotation);

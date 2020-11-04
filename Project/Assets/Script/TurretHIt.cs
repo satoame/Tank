@@ -6,6 +6,7 @@ public class TurretHIt : MonoBehaviour
 {
     public GameObject Turret;
     public GameObject effectPrefab;
+    public GameObject effectPrefab1;
     public int TurretHP;
     private int damege;
 
@@ -23,12 +24,20 @@ public class TurretHIt : MonoBehaviour
 
             //エフェクト追加
             GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
+
+            //shot削除
             Destroy(coll.gameObject);
-            Destroy(effect, 2.0f);
+
+            //エフェクト削除
+            Destroy(effect, 0.5f);
 
             if (TurretHP == 0)
             {
                 Destroy(Turret);
+
+                //削除時のエフェクト
+                GameObject effect2 = Instantiate(effectPrefab1, transform.position, Quaternion.identity);
+                Destroy(effect2, 1.0f);
             }
         }
     }

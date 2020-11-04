@@ -6,7 +6,6 @@ public class Turret: MonoBehaviour
 {
     public GameObject EShotPrefab;
     public float Speed;
-
     
     private int Timecount = 0;
     private bool Shotflag;
@@ -32,8 +31,8 @@ public class Turret: MonoBehaviour
                 eshotbr.velocity = this.transform.forward * Speed;
 
                 eshot.transform.forward = this.transform.forward;
-
-                Destroy(eshot, 3);
+                //弾削除
+                Destroy(eshot, 4);
             }
             Shotflag = false;
         }
