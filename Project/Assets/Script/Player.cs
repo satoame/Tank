@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
         {
             GameObject shot = Instantiate(ShotPrefab, ShotPosition.transform.position, ShotPosition.transform.rotation);
         }
-
         Move();
         Turn();
     }

@@ -20,16 +20,19 @@ public class Enemy : MonoBehaviour
 	private bool arrived;
 	//　スタート位置
 	private Vector3 startPosition;
+	//走る
+	private bool Runglag;
 
 	void Start()
 	{
 		enemyController = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
-		var randDestination = Random.insideUnitCircle * 2;
+		var randDestination = Random.insideUnitCircle * 4;
 		destination = startPosition + new Vector3(randDestination.x, 0, randDestination.y);
 		velocity = Vector3.zero;
 		arrived = false;
 		startPosition = transform.position;
+		Runglag = false;
 	}
 
 	void Update()
@@ -43,7 +46,7 @@ public class Enemy : MonoBehaviour
 				direction = (destination - transform.position).normalized;
 				transform.LookAt(new Vector3(destination.x, transform.position.y, destination.z));
 				velocity = direction * walkSpeed;
-				Debug.Log(destination);
+				//Debug.Log(destination);
 			}
 			velocity.y += Physics.gravity.y * Time.deltaTime;
 			enemyController.Move(velocity * Time.deltaTime);
@@ -54,6 +57,9 @@ public class Enemy : MonoBehaviour
 				arrived = true;
 				animator.SetFloat("Speed", 0.0f);
 			}
+
+			//切り替え
+
 		}
 	}
 }

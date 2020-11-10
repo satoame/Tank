@@ -8,11 +8,10 @@ public class PlayerHit : MonoBehaviour
 {
     public Slider slider;
     public Look script;
-    //public CameraCtr cameraCtr;
     public GameObject effectPrefab1;
     public GameObject effectPrefab2;
-    private int hp;
-    private int hpMax;
+    public int hp;
+    public int hpMax;
     private int damage;
 
     void Start()
@@ -41,9 +40,6 @@ public class PlayerHit : MonoBehaviour
             //バー0の時
             if (slider.value == 0)
             {
-                //プレイヤー削除(削除にカメラ不明)
-                //cameraCtrを消す
-
                 //Lookat無効
                 script.targetflag = false;
               
